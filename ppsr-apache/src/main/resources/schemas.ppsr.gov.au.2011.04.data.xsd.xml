@@ -1,0 +1,12 @@
+<data:ChangeB2GPasswordRequestType xmlns:data="http://schemas.ppsr.gov.au/2011/04/data">
+  <data:CustomersRequestMessageId>string</data:CustomersRequestMessageId>
+  <data:CustomersUserDefinedFields>
+    <!--Zero or more repetitions:-->
+    <data:CustomersUserDefinedField>
+      <data:FieldName>string</data:FieldName>
+      <data:FieldValue>string</data:FieldValue>
+    </data:CustomersUserDefinedField>
+  </data:CustomersUserDefinedFields>
+  <data:NewPassword>string</data:NewPassword>
+  <data:Username>string</data:Username>
+</data:ChangeB2GPasswordRequestType>

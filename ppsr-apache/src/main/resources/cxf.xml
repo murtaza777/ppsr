@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sec="http://cxf.apache.org/configuration/security"
+       xmlns:http="http://cxf.apache.org/transports/http/configuration"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xsi:schemaLocation="
+          http://cxf.apache.org/core
+          http://cxf.apache.org/schemas/core.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+          http://cxf.apache.org/configuration/security
+          http://cxf.apache.org/schemas/configuration/security.xsd
+          http://cxf.apache.org/transports/http/configuration
+          http://cxf.apache.org/schemas/configuration/http-conf.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://cxf.apache.org/jaxws
+          http://cxf.apache.org/schemas/jaxws.xsd">
+
+    <jaxws:client id="changePasswordClient"
+                  serviceClass="au.gov.ppsr.schemas._2011._04.services.RegisterOperationsService"
+                  address="https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11"/>
+    <http:conduit name="{https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11}RegisterOperationsSoap11.http-conduit">
+        <http:authorization>
+            <sec:UserName>MUR181</sec:UserName>
+            <sec:Password>NewPas$w0rd</sec:Password>
+        </http:authorization>
+        <http:client AutoRedirect="true" Connection="Keep-Alive"/>
+        <!--<http:tlsClientParameters secureSocketProtocol="SSL">
+
+        </http:tlsClientParameters>-->
+    </http:conduit>
+
+    <cxf:bus>
+        <cxf:features>
+            <cxf:logging/>
+        </cxf:features>
+    </cxf:bus>
+
+</beans>

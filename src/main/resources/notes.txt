@@ -1,0 +1,15 @@
+Client is Pepper auto finance
+IT provider is Netsol. 
+
+Acc 130021043
+Usr gon779
+pw Netsolpk123!
+Discovery environment
+Netsol IP 221.120.213.57
+endpoints they are trying
+https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/02/CollateralRegistration.svc/soap11
+
+https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/02/CollateralRegistration.svc/soap12
+
+The Support contact nbr at PPSR contact 1300 007 777 during business hours.
+You may have make a call during lunch hour if you need to speak to them. 

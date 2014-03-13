@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://schemas.ppsr.gov.au/2011/04/data"
+                   xmlns:ns2="http://schemas.ppsr.gov.au/2011/04/services"
+                   >
+<!--
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://schemas.ppsr.gov.au/2011/04/data"
+                   xmlns:ns2="http://schemas.ppsr.gov.au/2011/04/services"
+                   xmlns:ns3="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+-->
+    <SOAP-ENV:Header>
+        <!--<ns3:Security SOAP-ENV:mustUnderstand="1">
+            <ns3:UsernameToken>
+                <ns3:Username>gon779</ns3:Username>
+                <ns3:Password>Netsolpk123!</ns3:Password>
+            </ns3:UsernameToken>
+        </ns3:Security>-->
+        <ns2:TargetEnvironment>Discovery</ns2:TargetEnvironment>
+    </SOAP-ENV:Header>
+    <SOAP-ENV:Body>
+        <tns:SearchBySerialNumberRequestType xmlns:tns="http://schemas.ppsr.gov.au/2011/04/data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.ppsr.gov.au/2011/04/data file:///schemas.ppsr.gov.au.2011.04.data.xsd">
+            <tns:CustomersRequestMessageId>12345678</tns:CustomersRequestMessageId>
+            <tns:CustomersUserDefinedFields><tns:CustomersUserDefinedField>
+                <tns:FieldName>Client</tns:FieldName>
+                <tns:FieldValue>Pepper</tns:FieldValue>
+            </tns:CustomersUserDefinedField></tns:CustomersUserDefinedFields>
+            <tns:SearchCriteria>
+                <tns:IncludeArchived>false</tns:IncludeArchived>
+                <tns:IncludeCurrent>true</tns:IncludeCurrent>
+                <tns:IncludeExpired>false</tns:IncludeExpired>
+                <tns:IncludeRemoved>false</tns:IncludeRemoved>
+                <tns:SerialNumber>12345678901234567</tns:SerialNumber>
+                <tns:SerialNumberType>VIN</tns:SerialNumberType>
+            </tns:SearchCriteria>
+        </tns:SearchBySerialNumberRequestType>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

@@ -1,0 +1,14 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Body>
+        <ChangeB2GPasswordRequestMessage xmlns="http://schemas.ppsr.gov.au/2011/04/services"
+                                         xmlns:ns2="http://schemas.ppsr.gov.au/2011/04/data"
+                                         xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/Arrays"
+                                         xmlns:ns4="http://schemas.ppsr.gov.au/faults"><http:
+            //schemas.ppsr.gov.au/2011/04/services xmlns:ns5="http://schemas.ppsr.gov.au/2011/04/services" xmlns="">
+            <ns2:CustomersRequestMessageId xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns2:CustomersUserDefinedFields xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+            <ns2:NewPassword>123456789</ns2:NewPassword>
+            <ns2:Username>MUR181</ns2:Username>
+        </http://schemas.ppsr.gov.au/2011/04/services>
+    </ChangeB2GPasswordRequestMessage>
+</soap:Body></soap:Envelope>

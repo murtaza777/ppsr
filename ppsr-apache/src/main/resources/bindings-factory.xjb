@@ -1,0 +1,663 @@
+<jxb:bindings
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+        version="2.1">
+
+    <jxb:bindings schemaLocation="schemas.ppsr.gov.au.2011.04.data.xsd">
+        <jxb:bindings node="//xs:element[@name='CreateRegistrationsRequestType']">
+            <jxb:factoryMethod name="CreateRegistrationsRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CommonRequestType']">
+            <jxb:factoryMethod name="CommonRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CommonB2GMessageType']">
+            <jxb:factoryMethod name="CommonB2GMessageTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCustomersUserDefinedField']">
+            <jxb:factoryMethod name="ArrayOfCustomersUserDefinedFieldElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CustomersUserDefinedField']">
+            <jxb:factoryMethod name="CustomersUserDefinedFieldElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSecuredPartyGroupRequestType']">
+            <jxb:factoryMethod name="RetrieveSecuredPartyGroupRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='UpdateSecuredPartyGroupRequestType']">
+            <jxb:factoryMethod name="UpdateSecuredPartyGroupRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfReverifySecuredParty']">
+            <jxb:factoryMethod name="ArrayOfReverifySecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ReverifySecuredParty']">
+            <jxb:factoryMethod name="ReverifySecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='UpdatedAddressForService']">
+            <jxb:factoryMethod name="UpdatedAddressForServiceElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewAddressForService']">
+            <jxb:factoryMethod name="NewAddressForServiceElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewAddress']">
+            <jxb:factoryMethod name="NewAddressElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfUpdatedSecuredParty']">
+            <jxb:factoryMethod name="ArrayOfUpdatedSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='UpdatedSecuredParty']">
+            <jxb:factoryMethod name="UpdatedSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SecuredPartyIndividual']">
+            <jxb:factoryMethod name="SecuredPartyIndividualElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SecuredPartyOrganisation']">
+            <jxb:factoryMethod name="SecuredPartyOrganisationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ResetAccessCodeRequestType']">
+            <jxb:factoryMethod name="ResetAccessCodeRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ChangeAccessCodeRequestType']">
+            <jxb:factoryMethod name="ChangeAccessCodeRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSecuredPartyGroupHistoryRequestType']">
+            <jxb:factoryMethod name="RetrieveSecuredPartyGroupHistoryRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByRegistrationNumberRequestType']">
+            <jxb:factoryMethod name="SearchByRegistrationNumberRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchByRegistrationNumberSearchCriteria']">
+            <jxb:factoryMethod name="SearchByRegistrationNumberSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchBySerialNumberRequestType']">
+            <jxb:factoryMethod name="SearchBySerialNumberRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchBySerialNumberSearchCriteria']">
+            <jxb:factoryMethod name="SearchBySerialNumberSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorRequestType']">
+            <jxb:factoryMethod name="SearchByGrantorRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchByGrantorSearchCriteria']">
+            <jxb:factoryMethod name="SearchByGrantorSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralClassSearchCriteriaType']">
+            <jxb:factoryMethod name="ArrayOfCollateralClassSearchCriteriaTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='GrantorIndividualSearchCriteria']">
+            <jxb:factoryMethod name="GrantorIndividualSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='GrantorOrganisationSearchCriteria']">
+            <jxb:factoryMethod name="GrantorOrganisationSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorAndEventDateRangeRequestType']">
+            <jxb:factoryMethod name="SearchByGrantorAndEventDateRangeRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchByGrantorAndEventDateRangeSearchCriteria']">
+            <jxb:factoryMethod name="SearchByGrantorAndEventDateRangeSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='OrdinalSearchRequestType']">
+            <jxb:factoryMethod name="OrdinalSearchRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='OrdinalSearchSearchCriteria']">
+            <jxb:factoryMethod name="OrdinalSearchSearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RegistrationEvent']">
+            <jxb:factoryMethod name="RegistrationEventElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchResultRequestType']">
+            <jxb:factoryMethod name="RetrieveSearchResultRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchResultRegistrationAttachmentRequestType']">
+            <jxb:factoryMethod name="RetrieveSearchResultRegistrationAttachmentRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveGrantorSearchResultDetailRequestType']">
+            <jxb:factoryMethod name="RetrieveGrantorSearchResultDetailRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='FilterGrantorSearchResultRequestType']">
+            <jxb:factoryMethod name="FilterGrantorSearchResultRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorFilterCriteria']">
+            <jxb:factoryMethod name="SearchByGrantorFilterCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralClassFilterCriteriaType']">
+            <jxb:factoryMethod name="ArrayOfCollateralClassFilterCriteriaTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralType']">
+            <jxb:factoryMethod name="ArrayOfCollateralTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='FilterGrantorAndEventDateRangeSearchResultRequestType']">
+            <jxb:factoryMethod name="FilterGrantorAndEventDateRangeSearchResultRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorAndEventDateRangeFilterCriteria']">
+            <jxb:factoryMethod name="SearchByGrantorAndEventDateRangeFilterCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationHistoryDetailRequestType']">
+            <jxb:factoryMethod name="RetrieveRegistrationHistoryDetailRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RequestSearchCertificateRequestType']">
+            <jxb:factoryMethod name="RequestSearchCertificateRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchCertificateRequestType']">
+            <jxb:factoryMethod name="RetrieveSearchCertificateRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchCertificateRegistrationAttachmentRequestType']">
+            <jxb:factoryMethod name="RetrieveSearchCertificateRegistrationAttachmentRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveMessagesRequestType']">
+            <jxb:factoryMethod name="RetrieveMessagesRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveMessagePdfRequestType']">
+            <jxb:factoryMethod name="RetrieveMessagePdfRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DeleteMessagesRequestType']">
+            <jxb:factoryMethod name="DeleteMessagesRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='PingRequestType']">
+            <jxb:factoryMethod name="PingRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ChangeB2GPasswordRequestType']">
+            <jxb:factoryMethod name="ChangeB2GPasswordRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RequestReportRequestType']">
+            <jxb:factoryMethod name="RequestReportRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveReportRequestType']">
+            <jxb:factoryMethod name="RetrieveReportRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveReportSummariesRequestType']">
+            <jxb:factoryMethod name="RetrieveReportSummariesRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DeleteReportRequestType']">
+            <jxb:factoryMethod name="DeleteReportRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationRequestType']">
+            <jxb:factoryMethod name="RetrieveRegistrationRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AmendRegistrationRequestType']">
+            <jxb:factoryMethod name="AmendRegistrationRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralRegistrationAmendments']">
+            <jxb:factoryMethod name="CollateralRegistrationAmendmentsElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AdditionalAircraftCollateralDescriptionAmendments']">
+            <jxb:factoryMethod name="AdditionalAircraftCollateralDescriptionAmendmentsElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AdditionalVehicleCollateralDescriptionAmendments']">
+            <jxb:factoryMethod name="AdditionalVehicleCollateralDescriptionAmendmentsElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfNewAttachment']">
+            <jxb:factoryMethod name="ArrayOfNewAttachmentElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NewAttachment']">
+            <jxb:factoryMethod name="NewAttachmentElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfRemovedAttachment']">
+            <jxb:factoryMethod name="ArrayOfRemovedAttachmentElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RemovedAttachment']">
+            <jxb:factoryMethod name="RemovedAttachmentElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfNewGrantor']">
+            <jxb:factoryMethod name="ArrayOfNewGrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NewGrantor']">
+            <jxb:factoryMethod name="NewGrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewGrantorIndividual']">
+            <jxb:factoryMethod name="NewGrantorIndividualElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='GrantorOrganisation']">
+            <jxb:factoryMethod name="GrantorOrganisationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfRemovedGrantor']">
+            <jxb:factoryMethod name="ArrayOfRemovedGrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RemovedGrantor']">
+            <jxb:factoryMethod name="RemovedGrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='GrantorIndividual']">
+            <jxb:factoryMethod name="GrantorIndividualElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DischargeRegistrationRequestType']">
+            <jxb:factoryMethod name="DischargeRegistrationRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ResetRegistrationTokenRequestType']">
+            <jxb:factoryMethod name="ResetRegistrationTokenRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ReissueVerificationStatementRequestType']">
+            <jxb:factoryMethod name="ReissueVerificationStatementRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='TransferSingleRegistrationRequestType']">
+            <jxb:factoryMethod name="TransferSingleRegistrationRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='TransferAllRegistrationsRequestType']">
+            <jxb:factoryMethod name="TransferAllRegistrationsRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='UploadRegistrationAttachmentRequestType']">
+            <jxb:factoryMethod name="UploadRegistrationAttachmentRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationAttachmentRequestType']">
+            <jxb:factoryMethod name="RetrieveRegistrationAttachmentRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CreateSecuredPartyGroupRequestType']">
+            <jxb:factoryMethod name="CreateSecuredPartyGroupRequestTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfNewSecuredParty']">
+            <jxb:factoryMethod name="ArrayOfNewSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NewSecuredParty']">
+            <jxb:factoryMethod name="NewSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfNewCollateralRegistration']">
+            <jxb:factoryMethod name="ArrayOfNewCollateralRegistrationElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NewCollateralRegistration']">
+            <jxb:factoryMethod name="NewCollateralRegistrationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewRegistrationSerialisedCollateralDescription']">
+            <jxb:factoryMethod name="NewRegistrationSerialisedCollateralDescriptionElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AdditionalAircraftCollateralDescription']">
+            <jxb:factoryMethod name="AdditionalAircraftCollateralDescriptionElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AdditionalVehicleCollateralDescription']">
+            <jxb:factoryMethod name="AdditionalVehicleCollateralDescriptionElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CreateRegistrationsResponseType']">
+            <jxb:factoryMethod name="CreateRegistrationsResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CommonResponseType']">
+            <jxb:factoryMethod name="CommonResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='TransferAllRegistrationsResponseType']">
+            <jxb:factoryMethod name="TransferAllRegistrationsResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchResultRegistrationAttachmentResponseType']">
+            <jxb:factoryMethod name="RetrieveSearchResultRegistrationAttachmentResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorResponseType']">
+            <jxb:factoryMethod name="SearchByGrantorResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchByGrantorSearchResult']">
+            <jxb:factoryMethod name="SearchByGrantorSearchResultElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='GrantorOrganisationWithVerificationStatus']">
+            <jxb:factoryMethod name="GrantorOrganisationWithVerificationStatusElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorSearchResultSummary']">
+            <jxb:factoryMethod name="SearchByGrantorSearchResultSummaryElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralClassSearchSummaryDetail']">
+            <jxb:factoryMethod name="ArrayOfCollateralClassSearchSummaryDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralClassSearchSummaryDetail']">
+            <jxb:factoryMethod name="CollateralClassSearchSummaryDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralTypeSearchSummaryDetail']">
+            <jxb:factoryMethod name="ArrayOfCollateralTypeSearchSummaryDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralTypeSearchSummaryDetail']">
+            <jxb:factoryMethod name="CollateralTypeSearchSummaryDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchSummary']">
+            <jxb:factoryMethod name="SearchSummaryElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByRegistrationNumberResponseType']">
+            <jxb:factoryMethod name="SearchByRegistrationNumberResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchByRegistrationNumberSearchResult']">
+            <jxb:factoryMethod name="SearchByRegistrationNumberSearchResultElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ResultDetail']">
+            <jxb:factoryMethod name="ResultDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ChangeHistory']">
+            <jxb:factoryMethod name="ChangeHistoryElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfChangeDetail']">
+            <jxb:factoryMethod name="ArrayOfChangeDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ChangeDetail']">
+            <jxb:factoryMethod name="ChangeDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RegistrationDetail']">
+            <jxb:factoryMethod name="RegistrationDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AddressForServiceSearchDetail']">
+            <jxb:factoryMethod name="AddressForServiceSearchDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='Address']">
+            <jxb:factoryMethod name="AddressElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfAttachmentDetail']">
+            <jxb:factoryMethod name="ArrayOfAttachmentDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='AttachmentDetail']">
+            <jxb:factoryMethod name="AttachmentDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfGrantorSearchDetail']">
+            <jxb:factoryMethod name="ArrayOfGrantorSearchDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='GrantorSearchDetail']">
+            <jxb:factoryMethod name="GrantorSearchDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='GrantorIndividualSearchDetail']">
+            <jxb:factoryMethod name="GrantorIndividualSearchDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='MigrationDetail']">
+            <jxb:factoryMethod name="MigrationDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfCollateralRegistrationSecuredParty']">
+            <jxb:factoryMethod name="ArrayOfCollateralRegistrationSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralRegistrationSecuredParty']">
+            <jxb:factoryMethod name="CollateralRegistrationSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SerialisedCollateralDescription']">
+            <jxb:factoryMethod name="SerialisedCollateralDescriptionElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RestrictionDetail']">
+            <jxb:factoryMethod name="RestrictionDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RemovalDetail']">
+            <jxb:factoryMethod name="RemovalDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RestrictedAccessDetail']">
+            <jxb:factoryMethod name="RestrictedAccessDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DeleteReportResponseType']">
+            <jxb:factoryMethod name="DeleteReportResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationResponseType']">
+            <jxb:factoryMethod name="RetrieveRegistrationResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralRegistration']">
+            <jxb:factoryMethod name="CollateralRegistrationElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='AddressForService']">
+            <jxb:factoryMethod name="AddressForServiceElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfGrantor']">
+            <jxb:factoryMethod name="ArrayOfGrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='Grantor']">
+            <jxb:factoryMethod name="GrantorElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CollateralRegistrationSecuredPartyGroup']">
+            <jxb:factoryMethod name="CollateralRegistrationSecuredPartyGroupElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='AmendRegistrationResponseType']">
+            <jxb:factoryMethod name="AmendRegistrationResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DischargeRegistrationResponseType']">
+            <jxb:factoryMethod name="DischargeRegistrationResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ResetRegistrationTokenResponseType']">
+            <jxb:factoryMethod name="ResetRegistrationTokenResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ReissueVerificationStatementResponseType']">
+            <jxb:factoryMethod name="ReissueVerificationStatementResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='TransferSingleRegistrationResponseType']">
+            <jxb:factoryMethod name="TransferSingleRegistrationResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='UploadRegistrationAttachmentResponseType']">
+            <jxb:factoryMethod name="UploadRegistrationAttachmentResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationAttachmentResponseType']">
+            <jxb:factoryMethod name="RetrieveRegistrationAttachmentResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='CreateSecuredPartyGroupResponseType']">
+            <jxb:factoryMethod name="CreateSecuredPartyGroupResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSecuredPartyGroupResponseType']">
+            <jxb:factoryMethod name="RetrieveSecuredPartyGroupResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SecuredPartyGroupWithVerification']">
+            <jxb:factoryMethod name="SecuredPartyGroupWithVerificationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfSecuredPartyWithVerification']">
+            <jxb:factoryMethod name="ArrayOfSecuredPartyWithVerificationElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SecuredPartyWithVerification']">
+            <jxb:factoryMethod name="SecuredPartyWithVerificationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SecuredPartyOrganisationWithVerification']">
+            <jxb:factoryMethod name="SecuredPartyOrganisationWithVerificationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='UpdateSecuredPartyGroupResponseType']">
+            <jxb:factoryMethod name="UpdateSecuredPartyGroupResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ResetAccessCodeResponseType']">
+            <jxb:factoryMethod name="ResetAccessCodeResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ChangeAccessCodeResponseType']">
+            <jxb:factoryMethod name="ChangeAccessCodeResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSecuredPartyGroupHistoryResponseType']">
+            <jxb:factoryMethod name="RetrieveSecuredPartyGroupHistoryResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfSecuredPartyGroupChange']">
+            <jxb:factoryMethod name="ArrayOfSecuredPartyGroupChangeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SecuredPartyGroupChange']">
+            <jxb:factoryMethod name="SecuredPartyGroupChangeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfSecuredParty']">
+            <jxb:factoryMethod name="ArrayOfSecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SecuredParty']">
+            <jxb:factoryMethod name="SecuredPartyElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchBySerialNumberResponseType']">
+            <jxb:factoryMethod name="SearchBySerialNumberResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchBySerialNumberSearchResult']">
+            <jxb:factoryMethod name="SearchBySerialNumberSearchResultElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NevdisData']">
+            <jxb:factoryMethod name="NevdisDataElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfNevdisVehicle']">
+            <jxb:factoryMethod name="ArrayOfNevdisVehicleElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NevdisVehicle']">
+            <jxb:factoryMethod name="NevdisVehicleElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfStolenDetail']">
+            <jxb:factoryMethod name="ArrayOfStolenDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='StolenDetail']">
+            <jxb:factoryMethod name="StolenDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NevdisVehicleDetail']">
+            <jxb:factoryMethod name="NevdisVehicleDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NevdisRegistration']">
+            <jxb:factoryMethod name="NevdisRegistrationElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NevdisVehicleDescription']">
+            <jxb:factoryMethod name="NevdisVehicleDescriptionElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NevdisVehicleIdentifier']">
+            <jxb:factoryMethod name="NevdisVehicleIdentifierElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfWrittenOffDetail']">
+            <jxb:factoryMethod name="ArrayOfWrittenOffDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='WrittenOffDetail']">
+            <jxb:factoryMethod name="WrittenOffDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfResultDetail']">
+            <jxb:factoryMethod name="ArrayOfResultDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchByGrantorAndEventDateRangeResponseType']">
+            <jxb:factoryMethod name="SearchByGrantorAndEventDateRangeResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='OrdinalSearchResponseType']">
+            <jxb:factoryMethod name="OrdinalSearchResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='OrdinalSearchSearchResult']">
+            <jxb:factoryMethod name="OrdinalSearchSearchResultElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='OrdinalSearchSearchResultDetail']">
+            <jxb:factoryMethod name="OrdinalSearchSearchResultDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='OrdinalRegistrationDetail']">
+            <jxb:factoryMethod name="OrdinalRegistrationDetailElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchResultResponseType']">
+            <jxb:factoryMethod name="RetrieveSearchResultResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchCriteria']">
+            <jxb:factoryMethod name="SearchCriteriaElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchResult']">
+            <jxb:factoryMethod name="SearchResultElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveGrantorSearchResultDetailResponseType']">
+            <jxb:factoryMethod name="RetrieveGrantorSearchResultDetailResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='FilterGrantorSearchResultResponseType']">
+            <jxb:factoryMethod name="FilterGrantorSearchResultResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='FilterSummary']">
+            <jxb:factoryMethod name="FilterSummaryElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='FilterGrantorAndEventDateRangeSearchResultResponseType']">
+            <jxb:factoryMethod name="FilterGrantorAndEventDateRangeSearchResultResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveRegistrationHistoryDetailResponseType']">
+            <jxb:factoryMethod name="RetrieveRegistrationHistoryDetailResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RequestSearchCertificateResponseType']">
+            <jxb:factoryMethod name="RequestSearchCertificateResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveSearchCertificateResponseType']">
+            <jxb:factoryMethod name="RetrieveSearchCertificateResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings
+                node="//xs:element[@name='RetrieveSearchCertificateRegistrationAttachmentResponseType']">
+            <jxb:factoryMethod name="RetrieveSearchCertificateRegistrationAttachmentResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveMessagesResponseType']">
+            <jxb:factoryMethod name="RetrieveMessagesResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfB2GMailboxMessage']">
+            <jxb:factoryMethod name="ArrayOfB2GMailboxMessageElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='B2GMailboxMessage']">
+            <jxb:factoryMethod name="B2GMailboxMessageElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveMessagePdfResponseType']">
+            <jxb:factoryMethod name="RetrieveMessagePdfResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='B2GMailboxPdfMessage']">
+            <jxb:factoryMethod name="B2GMailboxPdfMessageElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='DeleteMessagesResponseType']">
+            <jxb:factoryMethod name="DeleteMessagesResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='PingResponseType']">
+            <jxb:factoryMethod name="PingResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ChangeB2GPasswordResponseType']">
+            <jxb:factoryMethod name="ChangeB2GPasswordResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RequestReportResponseType']">
+            <jxb:factoryMethod name="RequestReportResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveReportResponseType']">
+            <jxb:factoryMethod name="RetrieveReportResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='RetrieveReportSummariesResponseType']">
+            <jxb:factoryMethod name="RetrieveReportSummariesResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfReportSummary']">
+            <jxb:factoryMethod name="ArrayOfReportSummaryElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ReportSummary']">
+            <jxb:factoryMethod name="ReportSummaryElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ArrayOfRegistrationInfo']">
+            <jxb:factoryMethod name="ArrayOfRegistrationInfoElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RegistrationInfo']">
+            <jxb:factoryMethod name="RegistrationInfoElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='IsLaxSupportedResponseType']">
+            <jxb:factoryMethod name="IsLaxSupportedResponseTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='OrganisationNumberType']">
+            <jxb:factoryMethod name="OrganisationNumberTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SecuredPartyType']">
+            <jxb:factoryMethod name="SecuredPartyTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SerialNumberSearchCriteriaType']">
+            <jxb:factoryMethod name="SerialNumberSearchCriteriaTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralClassSearchCriteriaType']">
+            <jxb:factoryMethod name="CollateralClassSearchCriteriaTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='GrantorType']">
+            <jxb:factoryMethod name="GrantorTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SearchSelectionFlagType']">
+            <jxb:factoryMethod name="SearchSelectionFlagTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='SortOrderType']">
+            <jxb:factoryMethod name="SortOrderTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='RegistrationEventType']">
+            <jxb:factoryMethod name="RegistrationEventTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralClassFilterCriteriaType']">
+            <jxb:factoryMethod name="CollateralClassFilterCriteriaTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralType']">
+            <jxb:factoryMethod name="CollateralTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ReportFormatType']">
+            <jxb:factoryMethod name="ReportFormatTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ExtendedBooleanType']">
+            <jxb:factoryMethod name="ExtendedBooleanTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewRegistrationCollateralType']">
+            <jxb:factoryMethod name="NewRegistrationCollateralTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NewRegistrationCollateralClassType']">
+            <jxb:factoryMethod name="NewRegistrationCollateralClassTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='NewRegistrationSerialNumberType']">
+            <jxb:factoryMethod name="NewRegistrationSerialNumberTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='IdentifierVerificationStatusType']">
+            <jxb:factoryMethod name="IdentifierVerificationStatusTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SearchType']">
+            <jxb:factoryMethod name="SearchTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='ChangeType']">
+            <jxb:factoryMethod name="ChangeTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='CollateralClassType']">
+            <jxb:factoryMethod name="CollateralClassTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings multiple="true" node="//xs:element[@name='SerialNumberType']">
+            <jxb:factoryMethod name="SerialNumberTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='NevdisVehicleIdentifierType']">
+            <jxb:factoryMethod name="NevdisVehicleIdentifierTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='OrdinalSearchResultType']">
+            <jxb:factoryMethod name="OrdinalSearchResultTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ReportRequestedChannelType']">
+            <jxb:factoryMethod name="ReportRequestedChannelTypeElement"/>
+        </jxb:bindings>
+        <jxb:bindings node="//xs:element[@name='ReportStatusType']">
+            <jxb:factoryMethod name="ReportStatusTypeElement"/>
+        </jxb:bindings>
+    </jxb:bindings>
+</jxb:bindings>
