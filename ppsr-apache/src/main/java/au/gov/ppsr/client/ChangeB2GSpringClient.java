@@ -8,7 +8,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,10 +30,7 @@ public class ChangeB2GSpringClient {
 
         ObjectFactory factory = new ObjectFactory();
 
-        JAXBElement<ChangeB2GPasswordRequestTypeType> requestTypeElement =
-                new JAXBElement<ChangeB2GPasswordRequestTypeType>(QName.valueOf("http://schemas.ppsr.gov.au/2011/04/services"),
-                        ChangeB2GPasswordRequestTypeType.class,
-                        buildRequestType(UNAME, PWD));
+        JAXBElement<ChangeB2GPasswordRequestTypeType> requestTypeElement = factory.createChangeB2GPasswordRequestMessageChangeB2GPasswordRequest(buildRequestType(UNAME, PWD));
 
         ChangeB2GPasswordRequestMessage requestMessage = factory.createChangeB2GPasswordRequestMessage();
         requestMessage.setChangeB2GPasswordRequest(requestTypeElement);
