@@ -10,8 +10,6 @@
           http://cxf.apache.org/schemas/core.xsd
           http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
-          http://cxf.apache.org/configuration/security
-          http://cxf.apache.org/schemas/configuration/security.xsd
           http://cxf.apache.org/transports/http/configuration
           http://cxf.apache.org/schemas/configuration/http-conf.xsd
           http://www.springframework.org/schema/beans
@@ -21,22 +19,52 @@
 
     <jaxws:client id="changePasswordClient"
                   serviceClass="au.gov.ppsr.schemas._2011._04.services.RegisterOperationsService"
-                  address="https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11"/>
-    <http:conduit name="{https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11}RegisterOperationsSoap11.http-conduit">
-        <http:authorization>
-            <sec:UserName>MUR181</sec:UserName>
-            <sec:Password>NewPas$w0rd</sec:Password>
-        </http:authorization>
-        <http:client AutoRedirect="true" Connection="Keep-Alive"/>
-        <!--<http:tlsClientParameters secureSocketProtocol="SSL">
+                  address="https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11">
+        <jaxws:outInterceptors>
+            <bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+                <constructor-arg>
+                    <map>
+                        <entry key="action" value="UsernameToken"/>
+                        <entry key="user" value="MUR181"/>
+                        <entry key="passwordType" value="PasswordText"/>
+                        <entry key="passwordCallbackRef" value-ref="myPasswordCallback"/>
+                    </map>
+                </constructor-arg>
+            </bean>
+        </jaxws:outInterceptors>
+    </jaxws:client>
 
-        </http:tlsClientParameters>-->
-    </http:conduit>
+    <bean id="myPasswordCallback" class="au.gov.ppsr.client.handler.ClientPasswordCallback">
+        <property name="username" value="MUR181"/>
+    </bean>
 
-    <cxf:bus>
+    <!--<cxf:bus>
         <cxf:features>
             <cxf:logging/>
         </cxf:features>
+    </cxf:bus>-->
+
+    <bean id="abstractLoggingInterceptor" abstract="true">
+        <property name="prettyLogging" value="true"/>
+    </bean>
+    <bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor"
+          parent="abstractLoggingInterceptor"/>
+    <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"
+          parent="abstractLoggingInterceptor"/>
+
+    <cxf:bus>
+        <cxf:inInterceptors>
+            <ref bean="loggingInInterceptor"/>
+        </cxf:inInterceptors>
+        <cxf:outInterceptors>
+            <ref bean="loggingOutInterceptor"/>
+        </cxf:outInterceptors>
+        <cxf:outFaultInterceptors>
+            <ref bean="loggingOutInterceptor"/>
+        </cxf:outFaultInterceptors>
+        <cxf:inFaultInterceptors>
+            <ref bean="loggingInInterceptor"/>
+        </cxf:inFaultInterceptors>
     </cxf:bus>
 
 </beans>

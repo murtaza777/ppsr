@@ -1,4 +1,7 @@
 <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Header>
+        <TargetEnvironment xmlns="http://schemas.ppsr.gov.au/2011/04/services">Discovery</TargetEnvironment>
+    </soap:Header>
     <soap:Body>
         <ChangeB2GPasswordRequestMessage xmlns="http://schemas.ppsr.gov.au/2011/04/services"
                                          xmlns:ns2="http://schemas.ppsr.gov.au/2011/04/data"
