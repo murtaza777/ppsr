@@ -34,11 +34,11 @@
         </jaxws:outInterceptors>
     </jaxws:client>
 
-    <bean id="myPasswordCallback" class="au.gov.ppsr.client.handler.ClientPasswordCallback">
+    <bean id="myPasswordCallback" class="au.gov.ppsr.client.header.handler.ClientPasswordCallback">
         <property name="username" value="MUR181"/>
     </bean>
 
-  <bean id="objectFactory" class="au.gov.ppsr.schemas._2011._04.services.ObjectFactory"/>
+    <bean id="objectFactory" class="au.gov.ppsr.schemas._2011._04.services.ObjectFactory"/>
 
     <!--<cxf:bus>
         <cxf:features>

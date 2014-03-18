@@ -1,4 +1,4 @@
-package au.gov.ppsr.client.handler;
+package au.gov.ppsr.client.header.handler;
 
 import org.apache.ws.security.WSPasswordCallback;
 
