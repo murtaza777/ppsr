@@ -11,7 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.datatype.XMLGregorianCalendar;
-import javax.xml.namespace.QName;
 import javax.xml.ws.BindingProvider;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -34,7 +33,7 @@ public class ChangeB2GSpringClient {
     private static final String UNAME = "MUR181";
     private static final String PWD = "123456789";
 
-    public static void main(String[] args) throws JAXBException {
+    public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"cxf.xml"});
         RegisterOperationsService client = (RegisterOperationsService) context.getBean("changePasswordClient");
@@ -45,36 +44,34 @@ public class ChangeB2GSpringClient {
 
         ChangeB2GPasswordRequestMessage requestMessage = factory.createChangeB2GPasswordRequestMessage();
         requestMessage.setChangeB2GPasswordRequest(requestTypeElement);
-
-
-
-        addTargetEnvToHeader(client, factory);
-
-        try {
-            ChangeB2GPasswordResponseMessage responseMessage = client.changeB2GPassword(requestMessage);
-            LOG.debug("Response message is :{}", responseMessage);
-            long id = responseMessage.getChangeB2GPasswordResponse().getValue().getPpsrTransactionId();
-            XMLGregorianCalendar passwordExpiryDateTime = responseMessage.getChangeB2GPasswordResponse().getValue().getPasswordExpiryDateTime();
-            System.out.println(id);
-            System.out.println(passwordExpiryDateTime);
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrInvalidB2GRequestMessageFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrInvalidB2GRequestMessageFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrInvalidB2GRequestMessageFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrIncorrectEnvironmentFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrIncorrectEnvironmentFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrIncorrectEnvironmentFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrSoapFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrSoapFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrSoapFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrUnauthorisedFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrUnauthorisedFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrUnauthorisedFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrStringLengthExceededFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrStringLengthExceededFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrStringLengthExceededFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrRegisterOperationsChangeB2GPasswordValidationFaultDetailFaultFaultMessage registerOperationsServiceChangeB2GPasswordPpsrRegisterOperationsChangeB2GPasswordValidationFaultDetailFaultFaultMessage) {
-            registerOperationsServiceChangeB2GPasswordPpsrRegisterOperationsChangeB2GPasswordValidationFaultDetailFaultFaultMessage.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      try {
+          addTargetEnvToHeader(client, factory);
+          ChangeB2GPasswordResponseMessage responseMessage = client.changeB2GPassword(requestMessage);
+          LOG.debug("Response message is :{}", responseMessage);
+          long id = responseMessage.getChangeB2GPasswordResponse().getValue().getPpsrTransactionId();
+          XMLGregorianCalendar passwordExpiryDateTime = responseMessage.getChangeB2GPasswordResponse().getValue().getPasswordExpiryDateTime();
+          System.out.println(id);
+          System.out.println(passwordExpiryDateTime);
+        } catch (JAXBException je) {
+            je.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrInvalidB2GRequestMessageFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrIncorrectEnvironmentFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrSoapFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrUnauthorisedFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrStringLengthExceededFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
+        } catch (RegisterOperationsServiceChangeB2GPasswordPpsrRegisterOperationsChangeB2GPasswordValidationFaultDetailFaultFaultMessage roe) {
+            roe.printStackTrace();
         }
     }
 
     private static void addTargetEnvToHeader(RegisterOperationsService client, ObjectFactory factory) throws JAXBException {
         JAXBElement<String> targetEnvironment = factory.createTargetEnvironment("Discovery");
-        Header targetEnvHeader = new Header(new QName("http://schemas.ppsr.gov.au/2011/04/services", "TargetEnvironment"),
+        Header targetEnvHeader = new Header(targetEnvironment.getName(),
                 targetEnvironment,
                 new JAXBDataBinding(String.class));
         List<Header> headers = new ArrayList<Header>();
