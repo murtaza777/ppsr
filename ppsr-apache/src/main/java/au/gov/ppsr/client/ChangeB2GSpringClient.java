@@ -8,7 +8,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Created with IntelliJ IDEA.
  * User: murtaza
  * Date: 5/03/2014
  * Time: 10:21 PM
