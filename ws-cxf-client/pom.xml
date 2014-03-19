@@ -31,9 +31,9 @@
               <sourceRoot>${project.build.sourceDirectory}</sourceRoot>
               <wsdlOptions>
                 <wsdlOption>
-                  <wsdl>${basedir}/src/main/resources/schemas.ppsr.gov.au.2011.04.services.wsdl</wsdl>
+                  <wsdl>${basedir}/src/main/resources/wsdl/schemas.ppsr.gov.au.2011.04.services.wsdl</wsdl>
                   <bindingFiles>
-                    <bindingFile>${basedir}/src/main/resources/bindings-suffix.xjb</bindingFile>
+                    <bindingFile>${basedir}/src/main/resources/bindings/bindings-suffix.xjb</bindingFile>
                   </bindingFiles>
                 </wsdlOption>
               </wsdlOptions>
