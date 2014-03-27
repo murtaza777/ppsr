@@ -5,6 +5,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
@@ -20,7 +22,14 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 //Enables Spring's annotations
 @PropertySource("classpath:webapp.properties")
 @EnableWebMvc
-public class WebMvcConfig {
+public class WebMvcConfig extends WebMvcConfigurerAdapter {
+
+  @Override
+  public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    registry.addResourceHandler("/css/**").addResourceLocations("/css/");
+    registry.addResourceHandler("/js/**").addResourceLocations("/js/");
+  }
+
   @Bean
   public UrlBasedViewResolver setupViewResolver() {
     UrlBasedViewResolver resolver = new UrlBasedViewResolver();
