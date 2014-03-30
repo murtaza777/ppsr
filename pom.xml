@@ -11,6 +11,7 @@
   <modules>
     <module>ws-cxf-client</module>
     <module>webapp</module>
+    <module>ppsr-stubs</module>
   </modules>
 
   <properties>
