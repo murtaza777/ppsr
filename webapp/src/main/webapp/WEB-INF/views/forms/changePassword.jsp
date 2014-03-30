@@ -1,7 +1,7 @@
 <%@ page language="java" pageEncoding="UTF-8" contentType="text/html;charset=utf-8" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<form:form method="POST" commandName="form" action="/response" id="requestForm">
+<form:form method="POST" commandName="form" action="changePasswordResponse" id="requestForm">
   <table id="requestTable">
     <tr>
       <td>Username</td>

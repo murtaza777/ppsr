@@ -7,8 +7,11 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+
+import java.util.Properties;
 
 /**
  * @author kheriwalam5g
@@ -18,7 +21,8 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @Configuration
 //Specifies which package to scan
 @ComponentScan({"au.gov.ppsr.config",
-                "au.gov.ppsr.controller"})
+                "au.gov.ppsr.controller",
+                "au.gov.ppsr.service"})
 //Enables Spring's annotations
 @PropertySource("classpath:webapp.properties")
 @EnableWebMvc
@@ -36,6 +40,16 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     resolver.setPrefix("/WEB-INF/views/");
     resolver.setSuffix(".jsp");
     resolver.setViewClass(JstlView.class);
+    return resolver;
+  }
+
+  @Bean
+  public SimpleMappingExceptionResolver setupMappingExceptionResolver() {
+    SimpleMappingExceptionResolver resolver = new SimpleMappingExceptionResolver();
+    Properties mappings = new Properties();
+    mappings.put("au.gov.ppsr.exception.PpsrException", "exceptionPage");
+    resolver.setExceptionMappings(mappings);
+    resolver.setDefaultErrorView("error");
     return resolver;
   }
 }

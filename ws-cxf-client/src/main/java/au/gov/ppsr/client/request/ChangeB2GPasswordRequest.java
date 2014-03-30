@@ -1,6 +1,7 @@
 package au.gov.ppsr.client.request;
 
 import au.gov.ppsr.client.header.TargetEnvironment;
+import au.gov.ppsr.exception.PpsrException;
 import au.gov.ppsr.schemas._2011._04.data.ChangeB2GPasswordRequestTypeType;
 import au.gov.ppsr.schemas._2011._04.services.ChangeB2GPasswordRequestMessage;
 import au.gov.ppsr.schemas._2011._04.services.ChangeB2GPasswordResponseMessage;
@@ -43,7 +44,7 @@ public class ChangeB2GPasswordRequest {
       return null;
     } catch (Exception e) {
       LOG.error(e.getMessage());
-      throw new RuntimeException(e);
+      throw new PpsrException(e);
     }
   }
 
