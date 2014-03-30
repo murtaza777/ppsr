@@ -8,17 +8,24 @@ import javax.security.auth.callback.UnsupportedCallbackException;
 import java.io.IOException;
 
 /**
- * Created with IntelliJ IDEA.
  * User: murtaza
  * Date: 16/03/2014
  * Time: 9:21 PM
- * To change this template use File | Settings | File Templates.
  */
 public class ClientPasswordCallback implements CallbackHandler {
 
     private String username;
+  private String password;
 
-    public String getUsername() {
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public String getUsername() {
         return username;
     }
 
@@ -30,7 +37,7 @@ public class ClientPasswordCallback implements CallbackHandler {
     public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException {
         WSPasswordCallback pc = (WSPasswordCallback) callbacks[0];
         if (username.equals(pc.getIdentifier())) {
-            pc.setPassword("NewPas$w0rd");
+            pc.setPassword(password);
         }
     }
 }

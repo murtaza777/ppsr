@@ -24,11 +24,8 @@ public class ChangeB2GPasswordRequest {
 
   private static final Logger LOG = LoggerFactory.getLogger(ChangeB2GPasswordRequest.class);
 
-  private static final String UNAME = "MUR181";
-  private static final String NEW_PWD = "123456789";
-
-  public void request(ObjectFactory factory, RegisterOperationsService client) {
-    JAXBElement<ChangeB2GPasswordRequestTypeType> requestTypeElement = factory.createChangeB2GPasswordRequestMessageChangeB2GPasswordRequest(buildRequestType(UNAME, NEW_PWD));
+  public ChangeB2GPasswordResponseMessage request(ObjectFactory factory, RegisterOperationsService client, String username, String newPassword) {
+    JAXBElement<ChangeB2GPasswordRequestTypeType> requestTypeElement = factory.createChangeB2GPasswordRequestMessageChangeB2GPasswordRequest(buildRequestType(username, newPassword));
 
     ChangeB2GPasswordRequestMessage requestMessage = factory.createChangeB2GPasswordRequestMessage();
     requestMessage.setChangeB2GPasswordRequest(requestTypeElement);
@@ -40,9 +37,12 @@ public class ChangeB2GPasswordRequest {
       XMLGregorianCalendar passwordExpiryDateTime = responseMessage.getChangeB2GPasswordResponse().getValue().getPasswordExpiryDateTime();
       System.out.println(id);
       System.out.println(passwordExpiryDateTime);
+      return responseMessage;
     } catch (JAXBException je) {
       je.printStackTrace();
+      return null;
     } catch (Exception e) {
+      LOG.error(e.getMessage());
       throw new RuntimeException(e);
     }
   }
