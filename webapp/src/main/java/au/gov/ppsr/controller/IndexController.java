@@ -1,6 +1,6 @@
 package au.gov.ppsr.controller;
 
-import au.gov.ppsr.model.form.Form;
+import au.gov.ppsr.model.OperationForm;
 import com.google.common.collect.Maps;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -29,16 +29,21 @@ public class IndexController {
     return mav;
   }
 
-  @RequestMapping(value = "/response", method = RequestMethod.POST)
-  public String getResponse(@ModelAttribute("form") @Valid Form operation, BindingResult result) {
-    if (!result.hasErrors()) {
 
+  //TODO THis request mapping can be removed as this is never invoked
+  @RequestMapping(value = "/response", method = RequestMethod.POST)
+  public ModelAndView getResponse(@ModelAttribute("operation") @Valid OperationForm operation, BindingResult result) {
+    if (!result.hasErrors()) {
+      ModelAndView mav = new ModelAndView("response");
+      mav.addObject("operation", operation);
+      return mav;
     }
-    return "response";
+    return new ModelAndView("redirect:" + "invoke").addObject("operationsMap", buildOperationMap());
   }
 
   private Map<String, String> buildOperationMap() {
     Map<String, String> operationsMap = Maps.newHashMap();
+    operationsMap.put("ping", "Ping");
     operationsMap.put("changePassword", "ChangeB2GPassword");
     operationsMap.put("register", "RegisterOperation");
     operationsMap.put("search", "SearchOperation");

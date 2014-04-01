@@ -17,7 +17,7 @@
           http://cxf.apache.org/jaxws
           http://cxf.apache.org/schemas/jaxws.xsd">
 
-  <jaxws:client id="changePasswordClient"
+  <jaxws:client id="registerOperationsClient"
                 serviceClass="au.gov.ppsr.schemas._2011._04.services.RegisterOperationsService"
                 address="https://b2g-disc.ppsr.gov.au/PpsrB2GService/2011/04/RegisterOperations.svc/soap11">
     <!--<jaxws:outInterceptors>

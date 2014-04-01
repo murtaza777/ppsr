@@ -40,11 +40,11 @@ public class ChangeB2GSpringClient {
 
   public ChangePasswordResponse invokeService(String username, String password, String newPassword) throws PpsrException {
     ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"cxf.xml"});
-    RegisterOperationsService changePasswordClient = (RegisterOperationsService) context.getBean("changePasswordClient");
+    RegisterOperationsService registerOperationsClient = (RegisterOperationsService) context.getBean("registerOperationsClient");
     ObjectFactory objectFactory = (ObjectFactory) context.getBean("objectFactory");
     ChangeB2GPasswordRequest request = new ChangeB2GPasswordRequest();
-    HeaderAuthentication.addAuthentication(changePasswordClient, username, password);
-    ChangeB2GPasswordResponseMessage responseMessage = request.request(objectFactory, changePasswordClient, username, newPassword);
+    HeaderAuthentication.addAuthentication(registerOperationsClient, username, password);
+    ChangeB2GPasswordResponseMessage responseMessage = request.request(objectFactory, registerOperationsClient, username, newPassword);
     return ChangePasswordResponse.build()
         .customersRequestMessageId(responseMessage.getChangeB2GPasswordResponse().getValue().getCustomersRequestMessageId())
         .ppsrTransactionId(responseMessage.getChangeB2GPasswordResponse().getValue().getPpsrTransactionId())

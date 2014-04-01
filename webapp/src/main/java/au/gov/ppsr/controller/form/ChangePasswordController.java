@@ -61,6 +61,6 @@ public class ChangePasswordController {
       model.addAttribute(ERROR_ATTRIBUTE_NAME, e);
       return EXCEPTION_PAGE_NAME;
     }*/
-    return "changePasswordResponse";
+    return "response/changePasswordResponse";
   }
 }
