@@ -1,9 +1,6 @@
 package au.gov.ppsr.config;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -44,6 +41,7 @@ import java.util.Properties;
                 "au.gov.ppsr.service"})
 //Enables Spring's annotations
 @PropertySource("classpath:webapp.properties")
+@ImportResource("classpath:cxf.xml")
 @EnableWebMvc
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 

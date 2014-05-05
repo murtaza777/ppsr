@@ -7,6 +7,7 @@ import au.gov.ppsr.exception.PpsrException;
 import au.gov.ppsr.schemas._2011._04.services.ChangeB2GPasswordResponseMessage;
 import au.gov.ppsr.schemas._2011._04.services.ObjectFactory;
 import au.gov.ppsr.schemas._2011._04.services.RegisterOperationsService;
+import org.apache.cxf.frontend.ClientProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +19,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Time: 10:21 PM
  */
 public class ChangeB2GSpringClient {
-  //TODO Autowire the properties from cxf.xml
-  /*@Autowired
+  @Autowired
   private ObjectFactory objectFactory;
   @Autowired
-  RegisterOperationsService changePasswordClient;*/
+  private RegisterOperationsService registerOperationsClient;
 
   private static final Logger LOG = LoggerFactory.getLogger(ChangeB2GSpringClient.class);
 
-  public static void main(String[] args) throws Exception {
+  /*public static void main(String[] args) throws Exception {
     String username = "MUR181";
     String password = "NewPas$w0rd";
     String newPassword = "123456789";
@@ -34,16 +34,13 @@ public class ChangeB2GSpringClient {
     RegisterOperationsService port = (RegisterOperationsService) context.getBean("changePasswordClient");
     ObjectFactory factory = (ObjectFactory) context.getBean("objectFactory");
     ChangeB2GPasswordRequest request = new ChangeB2GPasswordRequest();
-    HeaderAuthentication.addAuthentication(port, username, password);
+    HeaderAuthentication.addAuthentication(ClientProxy.getClient(port), username, password);
     request.request(factory, port, username, newPassword);
-  }
+  }*/
 
   public ChangePasswordResponse invokeService(String username, String password, String newPassword) throws PpsrException {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"cxf.xml"});
-    RegisterOperationsService registerOperationsClient = (RegisterOperationsService) context.getBean("registerOperationsClient");
-    ObjectFactory objectFactory = (ObjectFactory) context.getBean("objectFactory");
     ChangeB2GPasswordRequest request = new ChangeB2GPasswordRequest();
-    HeaderAuthentication.addAuthentication(registerOperationsClient, username, password);
+    HeaderAuthentication.addAuthentication(ClientProxy.getClient(registerOperationsClient), username, password);
     ChangeB2GPasswordResponseMessage responseMessage = request.request(objectFactory, registerOperationsClient, username, newPassword);
     return ChangePasswordResponse.build()
         .customersRequestMessageId(responseMessage.getChangeB2GPasswordResponse().getValue().getCustomersRequestMessageId())

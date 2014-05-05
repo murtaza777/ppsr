@@ -9,6 +9,7 @@ package au.gov.ppsr.service.soap;
 import au.gov.ppsr.client.ChangeB2GSpringClient;
 import au.gov.ppsr.client.response.ChangePasswordResponse;
 import au.gov.ppsr.exception.PpsrException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,8 +20,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ChangePasswordService {
 
+  @Autowired
+  private ChangeB2GSpringClient client;
+
   public ChangePasswordResponse invokeWebService(String username, String password, String newPassword) throws PpsrException {
-    ChangeB2GSpringClient client = new ChangeB2GSpringClient();
     return client.invokeService(username, password, newPassword);
 
   }

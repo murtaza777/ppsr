@@ -9,6 +9,7 @@ package au.gov.ppsr.service.soap;
 import au.gov.ppsr.client.PingClient;
 import au.gov.ppsr.client.response.PingResponse;
 import au.gov.ppsr.exception.PpsrException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,8 +19,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PingService {
+  @Autowired
+  private PingClient client;
+
   public PingResponse invokeWebService(String username, String password) throws PpsrException {
-    PingClient client = new PingClient();
     return client.invokeService(username, password);
 
   }

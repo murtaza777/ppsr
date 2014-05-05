@@ -13,8 +13,10 @@ import au.gov.ppsr.exception.PpsrException;
 import au.gov.ppsr.schemas._2011._04.services.ObjectFactory;
 import au.gov.ppsr.schemas._2011._04.services.PingResponseMessage;
 import au.gov.ppsr.schemas._2011._04.services.RegisterOperationsService;
+import org.apache.cxf.frontend.ClientProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -24,6 +26,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class PingClient {
 
+  @Autowired
+  private ObjectFactory objectFactory;
+  @Autowired
+  private RegisterOperationsService port;
+
+
   private static final Logger LOG = LoggerFactory.getLogger(ChangeB2GSpringClient.class);
 
   public static void main(String[] args) {
@@ -31,17 +39,14 @@ public class PingClient {
     ObjectFactory factory = (ObjectFactory) context.getBean("objectFactory");
     RegisterOperationsService port = (RegisterOperationsService)context.getBean("registerOperationsClient");
     PingRequest request = new PingRequest();
-    HeaderAuthentication.addAuthentication(port, "MUR181", "NewPas$w0rd");
+    HeaderAuthentication.addAuthentication(ClientProxy.getClient(port), "MUR181", "NewPas$w0rd");
     request.request(factory, port);
   }
 
   public PingResponse invokeService(String username, String password) throws PpsrException {
-    ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[]{"cxf.xml"});
-    ObjectFactory factory = (ObjectFactory) context.getBean("objectFactory");
-    RegisterOperationsService port = (RegisterOperationsService)context.getBean("registerOperationsClient");
     PingRequest request = new PingRequest();
-    HeaderAuthentication.addAuthentication(port, username, password);
-    PingResponseMessage responseMessage = request.request(factory, port);
+    HeaderAuthentication.addAuthentication(ClientProxy.getClient(port), username, password);
+    PingResponseMessage responseMessage = request.request(objectFactory, port);
     return PingResponse.build()
         .customersRequestMessageId(responseMessage.getPingResponse().getValue().getCustomersRequestMessageId())
         .ppsrRequestMessageId(responseMessage.getPingResponse().getValue().getPpsrRequestMessageId())

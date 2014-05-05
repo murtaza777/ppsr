@@ -24,8 +24,7 @@ import java.util.Map;
  * Time: 12:36 AM
  */
 public class HeaderAuthentication {
-  public static void addAuthentication(RegisterOperationsService port, String username, String password) {
-    Client client = ClientProxy.getClient(port);
+  public static void addAuthentication(Client client, String username, String password) {
     Endpoint endpoint = client.getEndpoint();
     Map<String, Object> outProps = new HashMap<String, Object>();
     outProps.put(WSHandlerConstants.ACTION, WSHandlerConstants.USERNAME_TOKEN);
